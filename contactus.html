@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contactus.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logopic">
+            <a href="index.html">
+                <img src="logopic.png" alt="Logo">
+            </a>
+            
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="navBarButton">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="subscribe.html">Subscribe Now</a></li>
+                <li><a href="login.html">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="row">
+        <div class="sidebar">
+            <ul>
+                <li><a href="articles.html" ><b>Articles</b></a></li>
+                <li><a href="repositories.html"><b>Repositories</b></a></li>
+                <li><a href="conventiondates.html"><b>Convention Dates</b></a></li>
+                <li><a href="contactus.html" class="active"><b>Contact Us</b></a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="paragraph">
+                <p>Contact Us!</p>
+            </div>
+        </div>
+    </div>
+
+        <div id="main-div" class="clearfix">
+            <div class="pic">
+                <a href="https://www.instagram.com/kuhakumedia">
+                    <img src="instagram.png" alt="Image 1">
+                </a>
+            </div>
+        
+            <div class="pic">
+                <a href="https://www.facebook.com/Kuhakumedia">      
+                    <img src="fb.png" alt="Image 2">
+                </a>
+            </div>
+
+            <div class="pic">
+                <a href="https://x.com/KuhakuMedia?fbclid=IwY2xjawECmiBleHRuA2FlbQIxMAABHbtwP8oODqHctD0ShI4PmWJ8Pd3GK_Nujfi8TKqEHimi-scmNv-WhsKapw_aem_2QOrHnAKOMl27IPDN8G8YQ">            
+                    <img src="x.jpg" alt="Image 3">
+                </a>
+            </div>
+
+
+    <div id="footer-div">
+        <img src="logopic.png" alt="Footer Logo">
+        <div class="address">
+            Raine Zaldivar <br>
+            Kuhakumedia01@gmail.com
+        </div>
+    </div>
+
+<script>
+        $(document).ready(function() {
+            $('a').click(function(e) {
+                e.preventDefault(); 
+
+            var href = $(this).attr('href'); 
+
+            $('body').fadeOut(300, function() {
+                window.location.href = href;
+            });
+        });
+    });
+
+    function toggleMenu() {
+    const nav = document.querySelector('.navBarButton ul');
+    nav.classList.toggle('expanded');
+    }
+</script>
+
+</body>
+</html>

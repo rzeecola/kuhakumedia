@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convention Dates</title>
+    <link rel="stylesheet" href="conventiondates.css">
+</head>
+<body>
+    <header>
+        <div class="logopic">
+            <a href="index.html">
+                <img src="logopic.png" alt="Logo">
+            </a>
+        </div>
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="navBarButton">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="subscribe.html">Subscribe Now</a></li>
+                <li><a href="login.html">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="row">
+        <div class="sidebar">
+            <ul>
+                <li><a href="articles.html"><b>Articles</b></a></li>
+                <li><a href="repositories.html"><b>Repositories</b></a></li>
+                <li><a href="conventiondates.html" class="active"><b>Convention Dates</b></a></li>
+                <li><a href="contactus.html"><b>Contact Us</b></a></li>
+            </ul>
+        </div>
+
+        <div class="popup" id="popup">
+            <span class="popup-close" onclick="closePopup()">&times;</span>
+            <div class="popup-content">
+                <img src="" class="popup-img" id="popup-img1" alt="Popup Image 1">
+                <img src="" class="popup-img" id="popup-img2" alt="Popup Image 2">
+            </div>
+        </div>
+    </div>
+
+    <div id="main-div" class="clearfix">
+        <div class="pic small">
+            <a href="#" onclick="openPopup(0)">
+                <img src="kuhaku15.jpg" alt="Image 1">
+                <div class="text">January</div>
+            </a>
+        </div>
+        
+        <div class="pic small">
+            <a href="#" onclick="openPopup(1)">
+                <img src="kuhaku16.jpg" alt="Image 2">
+                <div class="text">February</div>
+            </a>
+        </div>
+        
+        <div class="pic small">
+            <a href="#" onclick="openPopup(2)">
+                <img src="kuhaku17.jpg" alt="Image 3">
+                <div class="text">March</div>
+            </a>
+        </div>
+        
+        <div class="pic large">
+            <a href="#" onclick="openPopup(3)">
+                <img src="kuhaku18.jpg" alt="Image 4">
+                <div class="text">April</div>
+            </a>
+        </div> 
+
+        <div class="pic small">
+            <a href="#" onclick="openPopup(4)">
+                <img src="kuhaku19.jpg" alt="Image 5">
+                <div class="text">May</div>
+            </a>
+        </div> 
+
+        <div class="pic large">
+            <a href="#" onclick="openPopup(5)">
+                <img src="kuhaku20.jpg" alt="Image 6">
+                <div class="text">June</div>
+            </a>
+        </div> 
+
+        <div class="pic large">
+            <a href="#" onclick="openPopup(6)">
+                <img src="kuhaku21.jpg" alt="Image 7">
+                <div class="text">July</div>
+            </a>
+        </div> 
+    </div>
+
+    <div id="footer-div">
+        <img src="logopic.png" alt="Footer Logo">
+        <div class="address">
+            Raine Zaldivar <br>
+            Kuhakumedia01@gmail.com
+        </div>
+    </div>
+
+    <script>
+        var imageGroups = [
+            ['kuhaku15.jpg'],
+            ['kuhaku16.jpg'],
+            ['kuhaku17.jpg'],
+            ['kuhaku18.jpg', 'kuhaku18a.jpg'],
+            ['kuhaku19.jpg'],
+            ['kuhaku20.jpg', 'kuhaku20a.jpg'],
+            ['kuhaku21.jpg', 'kuhaku21a.jpg']
+        ]; 
+        var currentImageIndex = 0;
+        
+        function openPopup(imgIndex) {
+            currentImageIndex = imgIndex;
+            updatePopupImages();
+            document.getElementById('popup').style.display = 'flex';
+        }
+        
+        function updatePopupImages() {
+            var images = imageGroups[currentImageIndex];
+            document.getElementById('popup-img1').src = images[0];
+            if (images.length > 1) {
+                document.getElementById('popup-img2').src = images[1];
+                document.getElementById('popup-img2').style.display = 'block';
+            } else {
+                document.getElementById('popup-img2').style.display = 'none';
+            }
+        }
+        
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+    function toggleMenu() {
+    const nav = document.querySelector('.navBarButton ul');
+    nav.classList.toggle('expanded');
+    }
+</script>
+</body>
+</html>

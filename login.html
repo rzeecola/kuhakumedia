@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="signin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logopic">
+            <a href="index.html">
+                <img src="logopic.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <nav class="navBarButton">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="subscribe.html">Subscribe Now</a></li>
+                <li><a href="login.html" class="active">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form action="https://formsubmit.co/202311025@fit.edu.ph" method="POST">
+        <h2><b>Log in</b></h2>
+        <div class="inputBox">
+            <input type="email" name="email" required>
+            <label>Email Address</label>
+        </div>
+
+        <div class="inputBox">
+            <input type="password" name="password" required>
+            <label>Password</label>
+        </div>
+
+        <div class="inputBox">
+            <input type="submit" value="Submit">
+        </div>
+
+        <div class="inputBoxBottom">
+            <p>Don't have an Account? <a href="signin.html">Sign In</a></p>
+            </div>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.inputBox input[type="text"], .inputBox input[type="email"], .inputBox input[type="password"]').forEach(input => {
+                let label = input.nextElementSibling;
+                label.innerHTML = label.innerText.split('').map((letter, i) =>
+                    `<span style="transition-delay:${i * 50}ms">${letter}</span>`
+                ).join('');
+            });
+        });
+
+        $(document).ready(function() {
+            $('a').click(function(e) {
+                e.preventDefault(); 
+
+                var href = $(this).attr('href'); 
+
+                $('body').fadeOut(300, function() {
+                    window.location.href = href;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="subscribe.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="logopic">
+            <a href="index.html">
+                <img src="logopic.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+
+        <nav class="navBarButton">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="subscribe.html" class="active">Subscribe Now</a></li>
+                <li><a href="login.html">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form action="https://formsubmit.co/202311025@fit.edu.ph" method="POST">
+        <h2>Photography Convention Rates Form</h2>
+        <div class="inputBox">
+            <div class="checkboxGroup">
+                <input type="checkbox" name="selectrates" value="Special Solo - P400" id="Photog1">
+                <label for="Photog1">Special Solo - P400</label>
+            </div>
+            <div class="checkboxGroup">
+                <input type="checkbox" name="selectrates" value="Solo/Duo - P500" id="Photog2">
+                <label for="Photog2">Solo/Duo - P500</label>
+            </div>
+            <div class="checkboxGroup">
+                <input type="checkbox" name="selectrates" value="Solo/Duo/Trio - P645" id="Photog3">
+                <label for="Photog3">Solo/Duo/Trio - P645</label>
+            </div>
+            <div class="checkboxGroup">
+                <input type="checkbox" name="selectrates" value="Special Package - P950 (Group)" id="Photog4">
+                <label for="Photog4">Special Package - P950 (Group)</label>
+            </div>
+        </div>
+        <div class="inputBox">
+            <input type="email" name="email" required>
+            <label>Email</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="address" required>
+            <label>Enter Address</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="contact_num" required>
+            <label>Contact Number</label>
+        </div>
+        <div class="inputBox">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.inputBox input[type="text"], .inputBox input[type="email"]').forEach(input => {
+                let label = input.nextElementSibling;
+                label.innerHTML = label.innerText.split('').map((letter, i) =>
+                    `<span style="transition-delay:${i * 50}ms">${letter}</span>`
+                ).join('');
+            });
+        });
+
+        $(document).ready(function() {
+        $('a').click(function(e) {
+            e.preventDefault(); 
+
+            var href = $(this).attr('href'); 
+
+            $('body').fadeOut(300, function() {
+                window.location.href = href;
+            });
+        });
+    });
+
+    function toggleMenu() {
+    const nav = document.querySelector('.navBarButton ul');
+    nav.classList.toggle('expanded');
+    }
+    </script>
+</body>
+</html>
